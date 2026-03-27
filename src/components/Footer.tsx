@@ -5,17 +5,23 @@ const Footer = () => (
     <div className="container mx-auto px-4">
       <div className="grid md:grid-cols-4 gap-8 mb-12">
         <div>
-          <h3 className="font-display text-xl mb-4">
-            Care<span className="text-primary">Well</span>
-          </h3>
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-7 h-7 rounded-lg bg-sage flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-xs">A</span>
+            </div>
+            <h3 className="font-display text-xl">
+              Apex<span className="text-sage">Salus</span>
+            </h3>
+          </div>
           <p className="text-sm opacity-70 leading-relaxed">
-            Compassionate healthcare for you and your family. Modern medicine with a personal touch.
+            Expert mental health services and healthcare administration consulting. 
+            Elevating wellness and operational excellence.
           </p>
         </div>
         {[
-          { title: "Services", items: ["Primary Care", "Pediatrics", "Cardiology", "Dermatology"] },
-          { title: "Company", items: ["About Us", "Our Team", "Careers", "News"] },
-          { title: "Contact", items: ["(555) 123-4567", "info@carewell.com", "123 Health Ave", "Mon–Fri 8am–6pm"] },
+          { title: "Mental Health", items: ["Clinical Therapy", "Employee Wellness", "Crisis Intervention", "Group Programs"] },
+          { title: "Consulting", items: ["Operations", "Compliance", "Strategic Planning", "Revenue Cycle"] },
+          { title: "Contact", items: ["(555) 987-6543", "hello@apexsalus.com", "Virtual & In-Person", "Mon–Fri 8am–6pm"] },
         ].map((col) => (
           <div key={col.title}>
             <h4 className="font-semibold text-sm mb-4 uppercase tracking-wider opacity-80">{col.title}</h4>
@@ -30,9 +36,9 @@ const Footer = () => (
         ))}
       </div>
       <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-xs opacity-50">© 2026 CareWell Health. All rights reserved.</p>
+        <p className="text-xs opacity-50">© 2026 ApexSalus. All rights reserved.</p>
         <p className="text-xs opacity-50 flex items-center gap-1">
-          Made with <Heart size={12} className="text-primary" /> for better health
+          Healing minds <Heart size={12} className="text-sage" /> Building systems
         </p>
       </div>
     </div>

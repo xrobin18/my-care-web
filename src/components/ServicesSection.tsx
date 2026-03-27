@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { Heart, Baby, Brain, Stethoscope, Eye, Bone } from "lucide-react";
+import { Brain, HeartHandshake, ShieldCheck, BarChart3, Users, FileText } from "lucide-react";
 
 const services = [
-  { icon: Stethoscope, title: "Primary Care", desc: "Comprehensive health checkups, preventive screenings, and ongoing wellness management." },
-  { icon: Heart, title: "Cardiology", desc: "Advanced cardiac diagnostics, treatment plans, and heart health monitoring." },
-  { icon: Baby, title: "Pediatrics", desc: "Gentle, expert care for infants, children, and adolescents at every stage." },
-  { icon: Brain, title: "Neurology", desc: "Specialized diagnosis and treatment of neurological conditions." },
-  { icon: Eye, title: "Ophthalmology", desc: "Complete eye exams, vision correction, and surgical eye care." },
-  { icon: Bone, title: "Orthopedics", desc: "Joint, bone, and muscle care from diagnosis through recovery." },
+  { icon: Brain, title: "Clinical Mental Health", desc: "Individual and group therapy, psychiatric evaluations, and evidence-based treatment plans for anxiety, depression, PTSD, and more.", category: "Mental Health" },
+  { icon: HeartHandshake, title: "Employee Wellness Programs", desc: "Customized mental health programs for organizations to boost employee wellbeing, reduce burnout, and improve retention.", category: "Mental Health" },
+  { icon: Users, title: "Crisis Intervention", desc: "Rapid-response mental health support and crisis management strategies for individuals and healthcare organizations.", category: "Mental Health" },
+  { icon: BarChart3, title: "Healthcare Operations Consulting", desc: "Streamline workflows, optimize revenue cycles, and implement best practices that drive measurable operational improvements.", category: "Admin Consulting" },
+  { icon: ShieldCheck, title: "Compliance & Accreditation", desc: "Navigate HIPAA, Joint Commission, and state regulations with expert guidance to maintain compliance and avoid costly penalties.", category: "Admin Consulting" },
+  { icon: FileText, title: "Strategic Planning & Growth", desc: "Data-driven strategic planning, market analysis, and growth roadmaps tailored to healthcare organizations of all sizes.", category: "Admin Consulting" },
 ];
 
 const ServicesSection = () => (
@@ -19,10 +19,10 @@ const ServicesSection = () => (
         viewport={{ once: true }}
         className="text-center mb-14"
       >
-        <span className="text-primary text-sm font-semibold uppercase tracking-wider">What We Offer</span>
-        <h2 className="text-3xl md:text-4xl font-display text-foreground mt-2">Our Medical Services</h2>
-        <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-          A wide range of specialties under one roof, delivered by board-certified physicians.
+        <span className="text-sage text-sm font-semibold uppercase tracking-wider">Our Expertise</span>
+        <h2 className="text-3xl md:text-4xl font-display text-foreground mt-2">Two Pillars, One Mission</h2>
+        <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+          We combine deep mental health expertise with healthcare administration mastery to deliver holistic solutions that improve lives and organizations.
         </p>
       </motion.div>
 
@@ -34,10 +34,15 @@ const ServicesSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="group bg-background rounded-xl p-6 border border-border hover:shadow-[var(--card-shadow-hover)] transition-shadow cursor-pointer"
+            className="group bg-background rounded-xl p-6 border border-border hover:shadow-[var(--card-shadow-hover)] transition-all cursor-pointer"
           >
-            <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-              <s.icon size={22} className="text-accent-foreground group-hover:text-primary-foreground transition-colors" />
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <s.icon size={22} className="text-accent-foreground group-hover:text-primary-foreground transition-colors" />
+              </div>
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-sage bg-sage-light px-2 py-1 rounded-full">
+                {s.category}
+              </span>
             </div>
             <h3 className="font-display text-lg text-foreground mb-2">{s.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>

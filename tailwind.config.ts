@@ -14,10 +14,19 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['DM Serif Display', 'serif'],
-        body: ['DM Sans', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
+        body: ['Inter', 'sans-serif'],
       },
       colors: {
+        sage: {
+          DEFAULT: "hsl(150 25% 42%)",
+          light: "hsl(150 20% 93%)",
+        },
+        navy: {
+          DEFAULT: "hsl(220 45% 20%)",
+          light: "hsl(220 30% 35%)",
+        },
+        warm: "hsl(35 40% 95%)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

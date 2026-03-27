@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const testimonials = [
-  { name: "Sarah M.", role: "Patient since 2021", text: "CareWell changed the way I think about healthcare. The doctors take time to listen and explain everything clearly. I've never felt more cared for.", rating: 5 },
-  { name: "James T.", role: "Patient since 2019", text: "After years of impersonal clinics, finding CareWell was a breath of fresh air. The staff is warm, professional, and genuinely invested in my wellbeing.", rating: 5 },
-  { name: "Maria L.", role: "Patient since 2022", text: "Booking is easy, wait times are minimal, and the facilities are beautiful. My whole family sees their doctors here now.", rating: 5 },
+  { name: "Dr. Rachel Kim", role: "Psychiatry Director, Metro Health", text: "ApexSalus transformed our mental health department's workflow. Patient wait times dropped 60% and provider satisfaction soared. Their understanding of both clinical and operational realities is unmatched.", rating: 5 },
+  { name: "Marcus Johnson", role: "CEO, Horizon Behavioral Health", text: "Their consulting engagement helped us achieve Joint Commission accreditation on the first attempt. The strategic roadmap they built continues to guide our growth two years later.", rating: 5 },
+  { name: "Dr. Anita Patel", role: "Licensed Clinical Psychologist", text: "As a solo practitioner, I was drowning in admin. ApexSalus streamlined my operations so I could focus on my patients. They truly understand the mental health space.", rating: 5 },
 ];
 
 const TestimonialsSection = () => (
@@ -16,8 +16,8 @@ const TestimonialsSection = () => (
         viewport={{ once: true }}
         className="text-center mb-14"
       >
-        <span className="text-primary text-sm font-semibold uppercase tracking-wider">Testimonials</span>
-        <h2 className="text-3xl md:text-4xl font-display text-foreground mt-2">What Our Patients Say</h2>
+        <span className="text-sage text-sm font-semibold uppercase tracking-wider">Client Stories</span>
+        <h2 className="text-3xl md:text-4xl font-display text-foreground mt-2">Trusted by Healthcare Leaders</h2>
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-6">
@@ -32,7 +32,7 @@ const TestimonialsSection = () => (
           >
             <div className="flex gap-1 mb-4">
               {Array.from({ length: t.rating }).map((_, j) => (
-                <Star key={j} size={14} className="fill-primary text-primary" />
+                <Star key={j} size={14} className="fill-sage text-sage" />
               ))}
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6 italic">"{t.text}"</p>

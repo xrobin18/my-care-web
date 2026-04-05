@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, HeartHandshake, ShieldCheck, BarChart3, Users, FileText } from "lucide-react";
+import { Brain, ShieldCheck, BarChart3, FileText } from "lucide-react";
 
 const services = [
   { icon: Brain, title: "Clinical Mental Health", desc: "Individual and group therapy, psychiatric evaluations, and evidence-based treatment plans for anxiety, depression, PTSD, and more.", category: "Mental Health" },

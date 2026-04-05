@@ -3,8 +3,6 @@ import { Brain, HeartHandshake, ShieldCheck, BarChart3, Users, FileText } from "
 
 const services = [
   { icon: Brain, title: "Clinical Mental Health", desc: "Individual and group therapy, psychiatric evaluations, and evidence-based treatment plans for anxiety, depression, PTSD, and more.", category: "Mental Health" },
-  { icon: HeartHandshake, title: "Employee Wellness Programs", desc: "Customized mental health programs for organizations to boost employee wellbeing, reduce burnout, and improve retention.", category: "Mental Health" },
-  { icon: Users, title: "Crisis Intervention", desc: "Rapid-response mental health support and crisis management strategies for individuals and healthcare organizations.", category: "Mental Health" },
   { icon: BarChart3, title: "Healthcare Operations Consulting", desc: "Streamline workflows, optimize revenue cycles, and implement best practices that drive measurable operational improvements.", category: "Admin Consulting" },
   { icon: ShieldCheck, title: "Compliance & Accreditation", desc: "Navigate HIPAA, Joint Commission, and state regulations with expert guidance to maintain compliance and avoid costly penalties.", category: "Admin Consulting" },
   { icon: FileText, title: "Strategic Planning & Growth", desc: "Data-driven strategic planning, market analysis, and growth roadmaps tailored to healthcare organizations of all sizes.", category: "Admin Consulting" },

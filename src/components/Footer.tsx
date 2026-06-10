@@ -14,13 +14,13 @@ const Footer = () => (
             </h3>
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
-            Expert mental health services and healthcare administration consulting. 
-            Elevating wellness and operational excellence.
+            Expert healthcare administration consulting. Elevating operations,
+            compliance, and strategic growth.
           </p>
         </div>
         {[
-          { title: "Mental Health", items: ["Clinical Therapy", "Employee Wellness", "Crisis Intervention", "Group Programs"] },
-          { title: "Consulting", items: ["Operations", "Compliance", "Strategic Planning", "Revenue Cycle"] },
+          { title: "Services", items: ["Operations Consulting", "Strategic Planning", "Compliance & Accreditation"] },
+          { title: "Company", items: ["About", "Approach", "Testimonials", "Contact"] },
           { title: "Contact", items: ["(555) 987-6543", "hello@apexsalus.com", "Virtual & In-Person", "Mon–Fri 8am–6pm"] },
         ].map((col) => (
           <div key={col.title}>

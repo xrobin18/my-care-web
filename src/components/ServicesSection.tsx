@@ -17,9 +17,9 @@ const ServicesSection = () => (
         className="text-center mb-14"
       >
         <span className="text-sage text-sm font-semibold uppercase tracking-wider">Our Expertise</span>
-        <h2 className="text-3xl md:text-4xl font-display text-foreground mt-2">Two Pillars, One Mission</h2>
+        <h2 className="text-3xl md:text-4xl font-display text-foreground mt-2">Healthcare Consulting, Done Right</h2>
         <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
-          We combine deep mental health expertise with healthcare administration mastery to deliver holistic solutions that improve lives and organizations.
+          We bring deep healthcare administration mastery to every engagement — helping organizations operate efficiently, grow strategically, and stay compliant.
         </p>
       </motion.div>
 

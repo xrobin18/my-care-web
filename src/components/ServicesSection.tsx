@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Brain, ShieldCheck, BarChart3, FileText } from "lucide-react";
+import { ShieldCheck, BarChart3, FileText } from "lucide-react";
 
 const services = [
-  { icon: Brain, title: "Clinical Mental Health", desc: "Individual and group therapy, psychiatric evaluations, and evidence-based treatment plans for anxiety, depression, PTSD, and more.", category: "Mental Health" },
-  { icon: BarChart3, title: "Healthcare Operations Consulting", desc: "Streamline workflows, optimize revenue cycles, and implement best practices that drive measurable operational improvements.", category: "Admin Consulting" },
-  { icon: ShieldCheck, title: "Compliance & Accreditation", desc: "Navigate HIPAA, Joint Commission, and state regulations with expert guidance to maintain compliance and avoid costly penalties.", category: "Admin Consulting" },
-  { icon: FileText, title: "Strategic Planning & Growth", desc: "Data-driven strategic planning, market analysis, and growth roadmaps tailored to healthcare organizations of all sizes.", category: "Admin Consulting" },
+  { icon: BarChart3, title: "Healthcare Operations Consulting", desc: "Streamline workflows, optimize revenue cycles, and implement best practices that drive measurable operational improvements.", category: "Consulting" },
+  { icon: FileText, title: "Strategic Planning & Growth", desc: "Data-driven strategic planning, market analysis, and growth roadmaps tailored to healthcare organizations of all sizes.", category: "Consulting" },
+  { icon: ShieldCheck, title: "Compliance & Accreditation", desc: "Navigate HIPAA, Joint Commission, and state regulations with expert guidance to maintain compliance and avoid costly penalties.", category: "Consulting" },
 ];
 
 const ServicesSection = () => (

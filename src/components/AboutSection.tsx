@@ -22,13 +22,13 @@ const AboutSection = () => (
             Where Compassion Meets Strategy
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            ApexSalus was founded on a simple belief: mental health care and healthcare administration are inseparable. They are two sides of the same coin. When operational systems are strong, providers are empowered to deliver their best care — and patients experience better outcomes.
+            ApexSalus was founded on a simple belief: strong healthcare administration is the foundation of exceptional care. When operational systems are sound, providers are empowered to deliver their best work — and patients experience better outcomes.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Our dual expertise gives us a unique advantage: we see both the human side of care and the structural side of healthcare. We know that healing is supported not only by skilled clinicians, but also by efficient workflows, sound leadership, compliant processes, and organizations built to function with excellence. That is why we help providers stay focused on their patients while we strengthen the systems that support them.
+            We bring a structural view of healthcare: efficient workflows, sound leadership, compliant processes, and organizations built to function with excellence. We help providers stay focused on their patients while we strengthen the systems that support them.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            At ApexSalus, we partner with healthcare and behavioral health organizations to bring clarity, structure, and strategy to the administrative side of care. We work to improve operations, reduce inefficiencies, support sustainable growth, and build systems that allow teams to work with greater confidence and purpose. By connecting clinical priorities with administrative excellence, we help create organizations that are more effective, more resilient, and better equipped to serve their communities.
+            We partner with healthcare and behavioral health organizations to bring clarity, structure, and strategy to the administrative side of care — improving operations, reducing inefficiencies, supporting sustainable growth, and building systems that allow teams to work with greater confidence and purpose.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-8">
             Because when care systems work better, everyone benefits — providers, organizations, and most importantly, patients.

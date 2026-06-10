@@ -53,8 +53,8 @@ const AboutSection = () => (
           <div className="bg-primary rounded-2xl p-10 text-primary-foreground">
             <h3 className="font-display text-2xl mb-4">Our Approach</h3>
             <p className="opacity-90 leading-relaxed mb-6">
-              We don't believe in one-size-fits-all. Every engagement begins with deep 
-              listening, followed by tailored strategies grounded in evidence and empathy.
+              We don't believe in one-size-fits-all. Every engagement begins with deep
+              listening, followed by tailored strategies grounded in evidence and operational rigor.
             </p>
             <ul className="space-y-3">
               {[

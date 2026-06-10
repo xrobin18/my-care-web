@@ -38,7 +38,7 @@ const Footer = () => (
       <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs opacity-50">© 2026 ApexSalus. All rights reserved.</p>
         <p className="text-xs opacity-50 flex items-center gap-1">
-          Healing minds <Heart size={12} className="text-sage" /> Building systems
+          Building stronger systems <Heart size={12} className="text-sage" /> for better care
         </p>
       </div>
     </div>

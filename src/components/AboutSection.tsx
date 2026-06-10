@@ -58,9 +58,9 @@ const AboutSection = () => (
             </p>
             <ul className="space-y-3">
               {[
-                "Evidence-based mental health interventions",
                 "Data-driven administrative optimization",
-                "Culturally responsive care frameworks",
+                "Compliance-first operational frameworks",
+                "Strategic growth and market analysis",
                 "Sustainable, scalable solutions",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-sm">

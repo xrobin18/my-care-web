@@ -13,9 +13,9 @@ const CTASection = () => (
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-sage/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="relative z-10">
-          <h2 className="font-display text-3xl md:text-4xl mb-4">Ready to Transform Your Practice?</h2>
+          <h2 className="font-display text-3xl md:text-4xl mb-4">Ready to Strengthen Your Operations?</h2>
           <p className="opacity-90 max-w-lg mx-auto mb-8">
-            Whether you need mental health expertise, operational consulting, or both — 
+            Whether you need operational consulting, compliance guidance, or strategic growth planning —
             let's start a conversation about what's possible.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-10">

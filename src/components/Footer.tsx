@@ -14,13 +14,13 @@ const Footer = () => (
             </h3>
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
-            Expert mental health services and healthcare administration consulting. 
-            Elevating wellness and operational excellence.
+            Expert healthcare administration consulting. Elevating operations,
+            compliance, and strategic growth.
           </p>
         </div>
         {[
-          { title: "Mental Health", items: ["Clinical Therapy", "Employee Wellness", "Crisis Intervention", "Group Programs"] },
-          { title: "Consulting", items: ["Operations", "Compliance", "Strategic Planning", "Revenue Cycle"] },
+          { title: "Services", items: ["Operations Consulting", "Strategic Planning", "Compliance & Accreditation"] },
+          { title: "Company", items: ["About", "Approach", "Testimonials", "Contact"] },
           { title: "Contact", items: ["(555) 987-6543", "hello@apexsalus.com", "Virtual & In-Person", "Mon–Fri 8am–6pm"] },
         ].map((col) => (
           <div key={col.title}>
@@ -38,7 +38,7 @@ const Footer = () => (
       <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs opacity-50">© 2026 ApexSalus. All rights reserved.</p>
         <p className="text-xs opacity-50 flex items-center gap-1">
-          Healing minds <Heart size={12} className="text-sage" /> Building systems
+          Building stronger systems <Heart size={12} className="text-sage" /> for better care
         </p>
       </div>
     </div>

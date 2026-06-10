@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const testimonials = [
-  { name: "Dr. Rachel Kim", role: "Psychiatry Director, Metro Health", text: "ApexSalus transformed our mental health department's workflow. Patient wait times dropped 60% and provider satisfaction soared. Their understanding of both clinical and operational realities is unmatched.", rating: 5 },
+  { name: "Dr. Rachel Kim", role: "Operations Director, Metro Health", text: "ApexSalus transformed our department's workflow. Patient wait times dropped 60% and staff satisfaction soared. Their understanding of healthcare operations is unmatched.", rating: 5 },
   { name: "Marcus Johnson", role: "CEO, Horizon Behavioral Health", text: "Their consulting engagement helped us achieve Joint Commission accreditation on the first attempt. The strategic roadmap they built continues to guide our growth two years later.", rating: 5 },
-  { name: "Dr. Anita Patel", role: "Licensed Clinical Psychologist", text: "As a solo practitioner, I was drowning in admin. ApexSalus streamlined my operations so I could focus on my patients. They truly understand the mental health space.", rating: 5 },
+  { name: "Dr. Anita Patel", role: "Practice Owner", text: "As a solo practitioner, I was drowning in admin. ApexSalus streamlined my operations so I could focus on my patients. They truly understand healthcare.", rating: 5 },
 ];
 
 const TestimonialsSection = () => (

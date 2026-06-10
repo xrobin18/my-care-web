@@ -13,16 +13,16 @@ const HeroSection = () => (
           transition={{ duration: 0.7 }}
         >
           <span className="inline-block bg-sage-light text-sage text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-            Mental Health · Healthcare Consulting
+            Healthcare Administration Consulting
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-tight mb-6">
-            Elevating <span className="text-sage">Minds</span> &{" "}
-            <span className="text-navy-light">Healthcare Systems</span>
+            Elevating <span className="text-sage">Healthcare</span>{" "}
+            <span className="text-navy-light">Operations</span>
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed mb-8 max-w-lg">
-            ApexSalus bridges the gap between mental wellness and healthcare 
-            administration. We deliver expert consulting that transforms both 
-            patient outcomes and operational excellence.
+            ApexSalus partners with healthcare organizations to streamline operations,
+            strengthen compliance, and drive sustainable growth — so your teams can
+            focus on delivering exceptional care.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="gap-2">

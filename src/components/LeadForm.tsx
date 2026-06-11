@@ -52,7 +52,10 @@ const LeadForm = ({ serviceSlug, serviceTitle }: LeadFormProps) => {
     const { error } = await supabase.from("leads").insert({
       service_slug: serviceSlug,
       service_title: serviceTitle,
-      ...parsed.data,
+      company: parsed.data.company,
+      role: parsed.data.role,
+      email: parsed.data.email,
+      message: parsed.data.message,
     });
     setSubmitting(false);
 

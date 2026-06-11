@@ -140,6 +140,8 @@ const ServicePage = () => {
         </div>
       </section>
 
+      <LeadForm serviceSlug={service.slug} serviceTitle={service.title} />
+
       <CTASection />
 
       {/* Other services */}

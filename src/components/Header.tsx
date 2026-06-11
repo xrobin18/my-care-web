@@ -22,7 +22,7 @@ const Header = () => {
           {navItems.map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/#${item.toLowerCase()}`}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {item}
@@ -46,7 +46,7 @@ const Header = () => {
             {navItems.map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`/#${item.toLowerCase()}`}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground py-1"
                 onClick={() => setMobileOpen(false)}
               >

@@ -4,6 +4,7 @@ import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import LeadForm from "@/components/LeadForm";
 import { Button } from "@/components/ui/button";
 import { getService, services } from "@/data/services";
 
@@ -138,6 +139,8 @@ const ServicePage = () => {
           </div>
         </div>
       </section>
+
+      <LeadForm serviceSlug={service.slug} serviceTitle={service.title} />
 
       <CTASection />
 

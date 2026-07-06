@@ -20,8 +20,8 @@ const CTASection = () => (
             let's start a conversation about what's possible.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <Button size="lg" variant="secondary" className="gap-2">
-              Book a Free Consultation <ArrowRight size={16} />
+            <Button asChild size="lg" variant="secondary" className="gap-2">
+              <Link to="/consultation">Book a Free Consultation <ArrowRight size={16} /></Link>
             </Button>
           </div>
           <div className="flex flex-wrap justify-center gap-8 text-sm opacity-80">

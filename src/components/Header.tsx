@@ -54,7 +54,7 @@ const Header = () => {
                 {item}
               </a>
             ))}
-            <Button size="sm" className="mt-2 w-full">Get Started</Button>
+            <Button asChild size="sm" className="mt-2 w-full"><Link to="/consultation" onClick={() => setMobileOpen(false)}>Get Started</Link></Button>
           </nav>
         </div>
       )}

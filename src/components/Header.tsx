@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -32,7 +33,7 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm">Client Portal</Button>
-          <Button size="sm">Get Started</Button>
+          <Button asChild size="sm"><Link to="/consultation">Get Started</Link></Button>
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -53,7 +54,7 @@ const Header = () => {
                 {item}
               </a>
             ))}
-            <Button size="sm" className="mt-2 w-full">Get Started</Button>
+            <Button asChild size="sm" className="mt-2 w-full"><Link to="/consultation" onClick={() => setMobileOpen(false)}>Get Started</Link></Button>
           </nav>
         </div>
       )}

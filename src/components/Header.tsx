@@ -33,7 +33,7 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm">Client Portal</Button>
-          <Button size="sm">Get Started</Button>
+          <Button asChild size="sm"><Link to="/consultation">Get Started</Link></Button>
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>

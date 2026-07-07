@@ -2,13 +2,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { z } from "zod";
-import { ArrowLeft, CheckCircle2, Calendar, Clock, Send, Phone, Mail, ShieldCheck } from "lucide-react";
+import { format } from "date-fns";
+import { ArrowLeft, CheckCircle2, Calendar as CalendarIcon, Clock, Send, Phone, Mail, ShieldCheck, ExternalLink, CalendarDays } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -17,8 +20,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { services } from "@/data/services";
+
+const SCHEDULER_URL = "https://calendly.com/apexsalus/consultation";
+
+const timeSlots = [
+  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
+  "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM",
+  "4:00 PM", "4:30 PM", "5:00 PM",
+];
 
 const schema = z.object({
   company: z.string().trim().min(1, "Company is required").max(200),
@@ -35,13 +47,15 @@ const focusAreas = [
 const highlights = [
   { icon: Clock, title: "30-minute call", desc: "Focused conversation with a senior consultant." },
   { icon: ShieldCheck, title: "No obligation", desc: "Confidential discovery, no sales pressure." },
-  { icon: Calendar, title: "Response within 1 business day", desc: "We confirm a time that works for your team." },
+  { icon: CalendarIcon, title: "Response within 1 business day", desc: "We confirm a time that works for your team." },
 ];
 
 const Consultation = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [focus, setFocus] = useState<string>("general");
+  const [preferredDate, setPreferredDate] = useState<Date | undefined>();
+  const [preferredTime, setPreferredTime] = useState<string>("");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -68,13 +82,17 @@ const Consultation = () => {
     setErrors({});
     setSubmitting(true);
     const selected = focusAreas.find((f) => f.value === focus)!;
+    const preferenceLine =
+      preferredDate || preferredTime
+        ? `\n\nPreferred time: ${preferredDate ? format(preferredDate, "PPP") : "(no date)"}${preferredTime ? ` at ${preferredTime}` : ""}`
+        : "";
     const { error } = await supabase.from("leads").insert({
       service_slug: selected.value,
       service_title: `Consultation — ${selected.title}`,
       company: parsed.data.company,
       role: parsed.data.role,
       email: parsed.data.email,
-      message: parsed.data.message,
+      message: `${parsed.data.message}${preferenceLine}`,
     });
     setSubmitting(false);
 
@@ -89,6 +107,8 @@ const Consultation = () => {
 
     setSubmitted(true);
     form.reset();
+    setPreferredDate(undefined);
+    setPreferredTime("");
     toast({
       title: "Consultation requested",
       description: "We'll reach out within one business day to schedule your call.",
@@ -157,6 +177,37 @@ const Consultation = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
+            {/* Instant scheduler */}
+            <div className="bg-primary text-primary-foreground rounded-2xl p-6 md:p-8 mb-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8 shadow-[var(--card-shadow)]">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <CalendarDays size={18} />
+                  <span className="text-xs font-semibold uppercase tracking-wider opacity-90">
+                    Prefer to book instantly?
+                  </span>
+                </div>
+                <h3 className="font-display text-xl md:text-2xl mb-1">
+                  Pick a time on our calendar
+                </h3>
+                <p className="text-sm opacity-90">
+                  See real-time availability and confirm your 30-minute consultation in a couple of clicks.
+                </p>
+              </div>
+              <Button asChild size="lg" variant="secondary" className="gap-2 shrink-0">
+                <a href={SCHEDULER_URL} target="_blank" rel="noopener noreferrer">
+                  Open scheduler <ExternalLink size={16} />
+                </a>
+              </Button>
+            </div>
+
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-px flex-1 bg-border" />
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                Or request a time
+              </span>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+
             {submitted ? (
               <div className="bg-card border border-border rounded-2xl p-10 text-center">
                 <div className="w-14 h-14 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-4">
@@ -193,6 +244,55 @@ const Consultation = () => {
                     </SelectContent>
                   </Select>
                 </div>
+
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="space-y-2">
+                    <Label>Preferred date <span className="text-muted-foreground font-normal">(optional)</span></Label>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          className={cn(
+                            "w-full justify-start text-left font-normal",
+                            !preferredDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon size={16} />
+                          {preferredDate ? format(preferredDate, "PPP") : <span>Pick a date</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={preferredDate}
+                          onSelect={setPreferredDate}
+                          disabled={(date) => {
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+                            return date < today || date.getDay() === 0 || date.getDay() === 6;
+                          }}
+                          initialFocus
+                          className={cn("p-3 pointer-events-auto")}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Preferred time <span className="text-muted-foreground font-normal">(optional)</span></Label>
+                    <Select value={preferredTime} onValueChange={setPreferredTime}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a time" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {timeSlots.map((t) => (
+                          <SelectItem key={t} value={t}>{t}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-2">

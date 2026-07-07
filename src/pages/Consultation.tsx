@@ -177,6 +177,37 @@ const Consultation = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
+            {/* Instant scheduler */}
+            <div className="bg-primary text-primary-foreground rounded-2xl p-6 md:p-8 mb-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8 shadow-[var(--card-shadow)]">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <CalendarDays size={18} />
+                  <span className="text-xs font-semibold uppercase tracking-wider opacity-90">
+                    Prefer to book instantly?
+                  </span>
+                </div>
+                <h3 className="font-display text-xl md:text-2xl mb-1">
+                  Pick a time on our calendar
+                </h3>
+                <p className="text-sm opacity-90">
+                  See real-time availability and confirm your 30-minute consultation in a couple of clicks.
+                </p>
+              </div>
+              <Button asChild size="lg" variant="secondary" className="gap-2 shrink-0">
+                <a href={SCHEDULER_URL} target="_blank" rel="noopener noreferrer">
+                  Open scheduler <ExternalLink size={16} />
+                </a>
+              </Button>
+            </div>
+
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-px flex-1 bg-border" />
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                Or request a time
+              </span>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+
             {submitted ? (
               <div className="bg-card border border-border rounded-2xl p-10 text-center">
                 <div className="w-14 h-14 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-4">

@@ -47,8 +47,15 @@ const focusAreas = [
 const highlights = [
   { icon: Clock, title: "30-minute call", desc: "Focused conversation with a senior consultant." },
   { icon: ShieldCheck, title: "No obligation", desc: "Confidential discovery, no sales pressure." },
-  { icon: Calendar, title: "Response within 1 business day", desc: "We confirm a time that works for your team." },
+  { icon: CalendarIcon, title: "Response within 1 business day", desc: "We confirm a time that works for your team." },
 ];
+
+const Consultation = () => {
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [focus, setFocus] = useState<string>("general");
+  const [preferredDate, setPreferredDate] = useState<Date | undefined>();
+  const [preferredTime, setPreferredTime] = useState<string>("");
 
 const Consultation = () => {
   const [submitting, setSubmitting] = useState(false);

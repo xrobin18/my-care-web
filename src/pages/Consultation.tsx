@@ -82,13 +82,17 @@ const Consultation = () => {
     setErrors({});
     setSubmitting(true);
     const selected = focusAreas.find((f) => f.value === focus)!;
+    const preferenceLine =
+      preferredDate || preferredTime
+        ? `\n\nPreferred time: ${preferredDate ? format(preferredDate, "PPP") : "(no date)"}${preferredTime ? ` at ${preferredTime}` : ""}`
+        : "";
     const { error } = await supabase.from("leads").insert({
       service_slug: selected.value,
       service_title: `Consultation — ${selected.title}`,
       company: parsed.data.company,
       role: parsed.data.role,
       email: parsed.data.email,
-      message: parsed.data.message,
+      message: `${parsed.data.message}${preferenceLine}`,
     });
     setSubmitting(false);
 

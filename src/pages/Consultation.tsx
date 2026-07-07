@@ -247,6 +247,55 @@ const Consultation = () => {
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
+                    <Label>Preferred date <span className="text-muted-foreground font-normal">(optional)</span></Label>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          className={cn(
+                            "w-full justify-start text-left font-normal",
+                            !preferredDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon size={16} />
+                          {preferredDate ? format(preferredDate, "PPP") : <span>Pick a date</span>}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={preferredDate}
+                          onSelect={setPreferredDate}
+                          disabled={(date) => {
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+                            return date < today || date.getDay() === 0 || date.getDay() === 6;
+                          }}
+                          initialFocus
+                          className={cn("p-3 pointer-events-auto")}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Preferred time <span className="text-muted-foreground font-normal">(optional)</span></Label>
+                    <Select value={preferredTime} onValueChange={setPreferredTime}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a time" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {timeSlots.map((t) => (
+                          <SelectItem key={t} value={t}>{t}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="space-y-2">
                     <Label htmlFor="company">Company</Label>
                     <Input id="company" name="company" placeholder="Acme Health Group" maxLength={200} required aria-invalid={!!errors.company} />
                     {errors.company && <p className="text-xs text-destructive">{errors.company}</p>}

@@ -107,6 +107,8 @@ const Consultation = () => {
 
     setSubmitted(true);
     form.reset();
+    setPreferredDate(undefined);
+    setPreferredTime("");
     toast({
       title: "Consultation requested",
       description: "We'll reach out within one business day to schedule your call.",

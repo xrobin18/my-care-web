@@ -56,11 +56,6 @@ const Consultation = () => {
   const [focus, setFocus] = useState<string>("general");
   const [preferredDate, setPreferredDate] = useState<Date | undefined>();
   const [preferredTime, setPreferredTime] = useState<string>("");
-
-const Consultation = () => {
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [focus, setFocus] = useState<string>("general");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

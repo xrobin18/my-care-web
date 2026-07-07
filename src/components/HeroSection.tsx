@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-apexsalus.jpg";
@@ -25,8 +26,8 @@ const HeroSection = () => (
             focus on delivering exceptional care.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="gap-2">
-              Schedule Consultation <ArrowRight size={16} />
+            <Button asChild size="lg" className="gap-2">
+              <Link to="/consultation">Schedule Consultation <ArrowRight size={16} /></Link>
             </Button>
             <Button variant="outline" size="lg" className="gap-2">
               <Phone size={16} /> Call Us Today

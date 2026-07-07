@@ -2,13 +2,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { z } from "zod";
-import { ArrowLeft, CheckCircle2, Calendar, Clock, Send, Phone, Mail, ShieldCheck } from "lucide-react";
+import { format } from "date-fns";
+import { ArrowLeft, CheckCircle2, Calendar as CalendarIcon, Clock, Send, Phone, Mail, ShieldCheck, ExternalLink, CalendarDays } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -17,8 +20,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { services } from "@/data/services";
+
+const SCHEDULER_URL = "https://calendly.com/apexsalus/consultation";
+
+const timeSlots = [
+  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
+  "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM",
+  "4:00 PM", "4:30 PM", "5:00 PM",
+];
 
 const schema = z.object({
   company: z.string().trim().min(1, "Company is required").max(200),
